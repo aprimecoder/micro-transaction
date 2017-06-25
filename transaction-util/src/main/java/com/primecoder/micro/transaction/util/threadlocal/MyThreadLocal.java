@@ -6,20 +6,6 @@ package com.primecoder.micro.transaction.util.threadlocal;
  */
 public class MyThreadLocal {
 
-    public static final ThreadLocal threadLocal = new ThreadLocal();
+    public static final ThreadLocal<String> TransactionIdThreadLocal = new ThreadLocal();
 
-    public static void set(Object value) {
-
-        threadLocal.set(value);
-    }
-
-    public static void unset() {
-
-        threadLocal.remove();
-    }
-
-    public static Object get() {
-
-        return threadLocal.get();
-    }
 }

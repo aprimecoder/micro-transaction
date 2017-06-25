@@ -1,5 +1,6 @@
 package com.primecoder.micro.transaction.aop.handler;
 
+import com.primecoder.micro.transaction.util.generate.TransactionId;
 import com.primecoder.micro.transaction.util.threadlocal.MyThreadLocal;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -19,20 +20,24 @@ public class DistributeTransactionAnnotationHandler {
     @Around(value = "@annotation(com.primecoder.micro.transaction.aop.annotation.DistributeTransaction)")
     public Object handler(ProceedingJoinPoint proceeding) {
 
-        System.out.println(MyThreadLocal.get());
+        String transactionId = MyThreadLocal.TransactionIdThreadLocal.get();
 
-        System.out.println("get the annotation!");
+        if (null == transactionId) {
+
+            MyThreadLocal.TransactionIdThreadLocal.set(TransactionId.generate());
+        }
 
         Object o = null;
 
         try {
 
             o = proceeding.proceed(proceeding.getArgs());
+
         } catch (Throwable e) {
             e.printStackTrace();
         }
 
-        System.out.println("end the annotation!");
+        MyThreadLocal.TransactionIdThreadLocal.remove();
 
         return o;
     }
