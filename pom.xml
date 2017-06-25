@@ -13,6 +13,7 @@
         <module>transaction-request</module>
         <module>transaction-commit</module>
         <module>transaction-pool</module>
+        <module>transaction-aop</module>
     </modules>
 
     <packaging>pom</packaging>
