@@ -12,4 +12,11 @@
     <artifactId>transaction-submit</artifactId>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>com.primecoder.micro.transaction</groupId>
+            <artifactId>transaction-util</artifactId>
+            <version>${transaction.version}</version>
+        </dependency>
+    </dependencies>
 </project>
