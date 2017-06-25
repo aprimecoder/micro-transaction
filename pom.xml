@@ -7,7 +7,14 @@
     <groupId>com.primecoder.micro.transaction</groupId>
     <artifactId>parent</artifactId>
     <version>1.0-SNAPSHOT</version>
-    
+    <modules>
+        <module>transaction-util</module>
+        <module>transaction-submit</module>
+        <module>transaction-request</module>
+        <module>transaction-commit</module>
+        <module>transaction-pool</module>
+    </modules>
+
     <packaging>pom</packaging>
 
    
