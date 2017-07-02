@@ -22,6 +22,7 @@
         <spring.version>4.3.5.RELEASE</spring.version>
         <aspectj.version>1.6.8</aspectj.version>
         <transaction.version>1.0-SNAPSHOT</transaction.version>
+        <common.pool.version>2.4.2</common.pool.version>
     </properties>
 
     <dependencyManagement>
@@ -42,6 +43,12 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
                 <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${common.pool.version}</version>
             </dependency>
 
         </dependencies>
